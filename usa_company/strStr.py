@@ -21,6 +21,9 @@ class Solution:
         for i in range(len(source) - 1):
             j = 0
             while j != len(target):
+                if i + j == len(source):
+                    break;
+                    
                 if s_list[i + j] != t_list[j]:
                     break;
 
