@@ -1,2 +1,2 @@
 # lint_code
-code for lint code
+The every subject solution with python
