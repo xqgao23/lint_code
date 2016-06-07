@@ -28,20 +28,19 @@ class Solution:
             elif matrix[result_index][0] < target:
                 min_index = result_index + 1
             else:
-                break
+                return True
 
-        if max_index < min_index:
-            result_index = max_index
+        nested_index = max_index
 
         min_index = 0
-        max_index = len(matrix[result_index]) - 1
-        new_result_index = 0
+        max_index = len(matrix[nested_index]) - 1
+        result_index = 0
         while max_index >= min_index:
-            new_result_index = int((min_index + max_index) / 2)
-            if matrix[result_index][new_result_index] > target:
-                max_index = new_result_index - 1
-            elif matrix[result_index][new_result_index] < target:
-                min_index = new_result_index + 1
+            result_index = int((min_index + max_index) / 2)
+            if matrix[nested_index][result_index] > target:
+                max_index = result_index - 1
+            elif matrix[nested_index][result_index] < target:
+                min_index = result_index + 1
             else:
                 return True
 
