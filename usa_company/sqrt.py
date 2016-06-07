@@ -6,24 +6,19 @@ class Solution:
     @return : The sqrt of x
     """
     def sqrt(self, x):
-        if x == 1:
-            return 1
-            
         min_num = 0
         max_num = x
-        while True:
+        while max_num >= min_num:
             sqrt_num = int((min_num + max_num) / 2)
             test_num = sqrt_num * sqrt_num
-            if test_num  == x:
+            if test_num == x:
                 return sqrt_num
             elif test_num > x:
-                max_num = sqrt_num
+                max_num = sqrt_num - 1
             else:
-                if min_num == sqrt_num:
-                    return sqrt_num
-                min_num = sqrt_num
+                min_num = sqrt_num + 1
 
-        return min_num
+        return max_num
 
 
 if __name__ == "__main__":
