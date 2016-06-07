@@ -15,9 +15,8 @@ class Solution:
     """
     def searchMatrix(self, matrix, target):
         if matrix is None or len(matrix) == 0:
-            return 0
+            return False
 
-        # first find the right nested list
         min_index = 0
         max_index = len(matrix) - 1
         result_index = 0
